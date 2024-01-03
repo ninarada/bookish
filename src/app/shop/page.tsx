@@ -2,16 +2,9 @@ import { getItem } from "../api/items/route"
 
 let item = {
     id: 0,
-    title: "",
-    price: 0,
-    description: "",
-    category: "",
-    image: "",
-    rating: {
-        rate: 0,
-        count: 0
-    }
+    title: ""
 };
+
 async function gItem () {
     item = await getItem();
 }
