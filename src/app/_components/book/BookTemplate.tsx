@@ -1,4 +1,4 @@
-import { TypeBook } from '@/app/types/Book';
+import { TypeBook } from '@/app/types/TypeBook';
 import styles from './book.module.css';
 import Image from "next/image";
 
@@ -7,7 +7,8 @@ export default function BookTemplate (book: TypeBook) {
         <>
         <div className={styles.container}>
             <div className={styles.title}>{book.title}</div>
-            <div className={styles.author}>{book.author}</div>
+            <div className={styles.title}>{book?.description}</div>
+            <div className={styles.title}>{book?.publishers}</div>
         </div>
         </>
     )
