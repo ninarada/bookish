@@ -1,3 +1,5 @@
+//NE TRIBA, mos obrisat
+
 import { NextResponse } from 'next/server'
 
 export async function getItem() {
