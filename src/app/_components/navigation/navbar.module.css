@@ -1,11 +1,9 @@
 .container {
-    background-color: #efe3d6;
-    padding: 0.5rem 0; 
+    background-color: var(--random-color3);
+    padding: 0.6rem 0; 
     position: sticky; 
     top: 0; 
     z-index: 5;
-    margin-bottom: 0.2rem;
-    align-content: center;
 }
 
 .container .leftTabs {
@@ -18,7 +16,7 @@
     white-space: nowrap;
     padding: 0.7rem 1.25rem; 
     font-size: 1rem; 
-    color: #715116;
+    color: var(--beige-warm-darker);
     font-weight: 500;
 }
 
@@ -28,8 +26,8 @@
 }
 
 .container .leftTabs .tabActiveClass {
-    color: #48330e;
-    background-color: #ca9b5ece;
+    color: var(--beige-warm-darker);
+    background-color: var(--beige-warm-lighter);
     pointer-events: none;
  }
 
@@ -40,6 +38,9 @@
     height: 100%;
     display: flex;
     align-items: center;
+    color: var(--beige-warm-darker);
+    font-size: xx-large;
+    letter-spacing: 2px;
 }
 
 .container .rightTabs {
@@ -57,7 +58,7 @@
     display: block;
     height: 2rem;
     width: 2rem;
-    background: #c1b8a6;
+    background: var(--beige-warm-dark);
     margin-right: 15px;
 }
 

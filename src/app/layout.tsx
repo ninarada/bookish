@@ -2,12 +2,15 @@ import type { Metadata } from 'next'
 import { Lora } from 'next/font/google'
 import './globals.css'
 import NavBar from './_components/navigation/navbar'
+import { Playfair_Display } from 'next/font/google'
+import Footer from './_components/footer/footer'
 
 const lora = Lora({ subsets: ['latin'] })
+const playfair = Playfair_Display({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Glamify',
-  description: 'Makeup Store',
+  title: 'Bookish',
+  description: 'Book Tracker',
 }
 
 const pages: Record<string, `/${string}`> = {
@@ -22,7 +25,9 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
     <html lang="en">
       <body className={lora.className}>
         <NavBar pages={pages}/>
-        {children}</body>
+        {children}
+        <Footer />
+        </body>
     </html>
   )
 }

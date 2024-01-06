@@ -6,6 +6,21 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --beige-warm-lighter: #D2C1B0;
+  --beige-warm-light: #AD947E;
+  --beige-warm-dark: #AA9183;
+  --beige-warm-darker: #735E59;
+
+  --beige-cold-lighter: #D7CAC1;
+  --beige-cold-light: #CBC2B9;
+  --beige-cold-dark: #AFA295;
+  --beige-cold-darker-greenish: #9E9784;
+
+  --random-color: #c1b8a6;
+  --random-color2: #efe3d6;
+  --random-color3: #f1e9e1;
+  --random-color4: #f5f0ea;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +33,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  background-color: var(--random-color4);
 }

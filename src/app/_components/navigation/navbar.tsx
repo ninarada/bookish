@@ -4,11 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 import Image from "next/image";
+import { Playfair_Display } from 'next/font/google'
+
+const playfair = Playfair_Display({ 
+    weight: [ '800'],
+    style: ['italic'],
+    subsets: ['latin'],
+});
 
 interface NavbarProps {
     pages: Record<string, `/${string}`>;
 }
-
 
 export default function NavBar ({pages}: NavbarProps) {
     const pathName = usePathname();
@@ -26,7 +32,7 @@ export default function NavBar ({pages}: NavbarProps) {
                 ))}
             </div>
             <div className={styles.logo}>
-                    <span>bookish</span>
+                    <span className={playfair.className}>bookish</span>
             </div>
             <div className={styles.rightTabs}>
                 <span className={styles.icon}>
@@ -37,6 +43,9 @@ export default function NavBar ({pages}: NavbarProps) {
                 </span>
                 <span className={styles.icon}>
                     <Image src="/messages.svg" alt="nmessageIcon" width={50} height={50} className={styles.iconSVG}/>
+                </span>
+                <span className={styles.icon}>
+                    <Image src="/profile.svg" alt="nmessageIcon" width={50} height={50} className={styles.iconSVG}/>
                 </span>
             </div>
         </nav>
