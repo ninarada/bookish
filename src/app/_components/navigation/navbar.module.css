@@ -1,0 +1,68 @@
+.container {
+    background-color: #efe3d6;
+    padding: 0.5rem 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 5;
+    margin-bottom: 0.2rem;
+    align-content: center;
+}
+
+.container .leftTabs {
+   width: fit-content;
+   position: relative;
+   left: 0;
+}
+
+.container .leftTabs .tabBaseClass {
+    white-space: nowrap;
+    padding: 0.7rem 1.25rem; 
+    font-size: 1rem; 
+    color: #715116;
+    font-weight: 500;
+}
+
+.container .leftTabs .tabBaseClass:hover {
+    background-color: #ebe2d7;
+    color: #aa8a63;
+}
+
+.container .leftTabs .tabActiveClass {
+    color: #48330e;
+    background-color: #ca9b5ece;
+    pointer-events: none;
+ }
+
+.container .logo {
+    position:absolute;
+    top: 0; 
+    left: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .rightTabs {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.rightTabs .icon {
+    border-radius: 50%;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    background: #c1b8a6;
+    margin-right: 15px;
+}
+
+.rightTabs .icon .iconSVG {
+    filter: invert(99%) sepia(1%) saturate(4944%) hue-rotate(312deg) brightness(98%) contrast(95%);
+}
+
+
