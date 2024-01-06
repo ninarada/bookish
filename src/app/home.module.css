@@ -41,5 +41,16 @@
 }
 
 .feature {
-    padding: 0px 30px;
+    padding: 0px 40px;
+}
+
+
+.frame2 .header2 {
+    font-size: x-large;
+    color: var(--beige-warm-darker);
+    font-weight: 600;
+}
+
+.frame2 .p2 {
+    text-align: justify;
 }

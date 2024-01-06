@@ -1,10 +1,8 @@
 import { TypeBook } from "@/app/types/TypeBook";
 
-const baseUrl = 'https://openlibrary.org/books/OL17889978W.json';
+export default async function getBook(OLID: string) {
 
-export default async function getBook() {
-
-    const response = await fetch(baseUrl);
+    const response = await fetch(`https://openlibrary.org/books/${OLID}.json`);
     const data = await response.json();
 
     const fetchedBook: TypeBook = {

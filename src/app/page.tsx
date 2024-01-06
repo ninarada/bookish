@@ -19,16 +19,16 @@ export default function Home() {
 
       <div className={styles.frame2}>
         <div className={styles.feature}>
-          <h2>Discover</h2>
-          <p>Explore a diverse library of books across genres. Find hidden gems and discover new authors.</p>
+          <h2 className={styles.header2}>Discover</h2>
+          <p className={styles.p2}>Explore a diverse library of books across genres. Find hidden gems and discover new authors.</p>
         </div>
         <div className={styles.feature}>
-          <h2>Track</h2>
-          <p>Set reading goals, track your progress, and organize your reading list efficiently.</p>
+          <h2 className={styles.header2}>Track</h2>
+          <p className={styles.p2}>Set reading goals, track your progress, and organize your reading list efficiently.</p>
         </div>
         <div className={styles.feature}>
-          <h2>Connect</h2>
-          <p>Join a vibrant community of book enthusiasts. Share your thoughts, recommendations, and connect with like-minded readers.</p>
+          <h2 className={styles.header2}>Connect</h2>
+          <p className={styles.p2}>Join a vibrant community of book enthusiasts. Share your thoughts, recommendations, and connect with like-minded readers.</p>
         </div>
       </div>
     </main>

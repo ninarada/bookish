@@ -7,8 +7,6 @@ export default function BookTemplate (book: TypeBook) {
         <>
         <div className={styles.container}>
             <div className={styles.title}>{book.title}</div>
-            <div className={styles.title}>{book?.description}</div>
-            <div className={styles.title}>{book?.publishers}</div>
         </div>
         </>
     )
