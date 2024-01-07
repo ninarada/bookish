@@ -8,6 +8,8 @@ export default async function getBook(OLID: string) {
     const fetchedBook: TypeBook = {
         description: data.description,
         title: data.title,
+        authors: data.authors,
+        covers: data.covers,
     };
     
     return fetchedBook;

@@ -7,7 +7,7 @@
 export interface TypeBook {
     description?: string;
     title: string;
-    covers?: [];
+    covers: [];
     subject_places?: [];
     subjects?: [];
     key?: string;

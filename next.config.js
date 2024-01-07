@@ -7,6 +7,7 @@ const nextConfig = {
             "source.unsplash.com",
             "images.ctfassets.net",
             "images.unsplash.com",
+            'covers.openlibrary.org',
         ],
     },
 }

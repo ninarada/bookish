@@ -1,0 +1,35 @@
+.workCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 350px;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.title {
+    font-size: 1vw;
+    padding: 0px 3px;
+    margin-top: 3px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.authors {
+    font-size: 0.8vw;
+    padding-left: 3px;
+    margin-bottom: 3px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.author {
+    width: fit-content;
+
+}
+
+.image {
+    height: 12vw;
+}

@@ -1,16 +1,16 @@
-import { TypeBook } from "@/app/types/TypeBook";
-
-const baseUrl = 'https://openlibrary.org/works/OL66554W.json';
+import { TypeWork } from "@/app/types/TypeWork";
 
 export default async function getWork(OLID: string) {
 
     const response = await fetch(`https://openlibrary.org/works/${OLID}.json`);
     const data = await response.json();
 
-    const fetchedWorks: TypeBook = {
-        description: data.description,
+    const fetchedWorks: TypeWork = {
+        key: data.key,
         title: data.title,
         authors: data.authors,
+        covers: data.covers,
+        description: data.description,
     };
 
     //console.log(fetchedWorks);

@@ -2,6 +2,7 @@ import { TypeSubject } from "@/app/types/TypeSubject";
 import getWork from "./getWorks";
 import getBook from "./getBook";
 import { TypeBook } from "@/app/types/TypeBook";
+import { TypeWork } from "@/app/types/TypeWork";
 
 export default async function getBooksBySubjectName(input: string, limit: string) {
 
@@ -18,8 +19,8 @@ export default async function getBooksBySubjectName(input: string, limit: string
 
     const fetchedWorksKeys = fetchedSubject.works?.map((work) => work.key.split('/').pop());
 
-    const fetchedWorks: TypeBook[] = fetchedWorksKeys ?  await Promise.all(fetchedWorksKeys.map(async(i) => {
-            return await getBook(i!)
+    const fetchedWorks: TypeWork[] = fetchedWorksKeys ?  await Promise.all(fetchedWorksKeys.map(async(i) => {
+            return await getWork(i!);
         })
     ) : [];
 

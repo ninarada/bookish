@@ -1,0 +1,13 @@
+.slider_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 30px 0;
+}
+
+.books_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
