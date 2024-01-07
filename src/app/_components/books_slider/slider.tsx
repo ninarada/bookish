@@ -1,10 +1,13 @@
-import { TypeBook } from "@/app/types/TypeBook";
+"use client"
+
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import styles from "./slider.module.css";
 import { TypeWork } from "@/app/types/TypeWork";
 import WorkTemplate from "../work/WorkTemplate";
-import styles from "./slider.module.css";
+import { useEffect, useState } from "react";
 
 export default function BookSlider (works: TypeWork[]){
+    
     const worksArray = Object.values(works);
 
     return (

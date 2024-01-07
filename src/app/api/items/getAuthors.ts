@@ -1,6 +1,6 @@
 import { TypeAuthor } from "@/app/types/TypeAuthor";
 
-export default async function getAuthor (olid: string) {
+export default async function getAuthor (olid: string): Promise<TypeAuthor> {
     try {
         const response = await fetch(`https://openlibrary.org/authors/${olid}.json`);
         const data = await response.json();
@@ -9,11 +9,9 @@ export default async function getAuthor (olid: string) {
             name: data.name,
             key: data.key,
         }
-
         return fetchedAuthor;
     } 
     catch (error){
-        console.error('Error fetching image:', error);
-        return null;
+        throw new Error(`Unable to fetch author with OLID: ${olid}`);
     }
 }
