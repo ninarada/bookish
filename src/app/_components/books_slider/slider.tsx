@@ -5,19 +5,23 @@ import styles from "./slider.module.css";
 import { TypeWork } from "@/app/types/TypeWork";
 import WorkTemplate from "../work/WorkTemplate";
 import { useEffect, useState } from "react";
+import { TypeAuthor } from "@/app/types/TypeAuthor";
 
-export default function BookSlider (works: TypeWork[]){
+interface BookSliderProps {
+    subject: {keyWork: TypeWork, keyAuthor: TypeAuthor[]}[];
+}
+
+export default function BookSlider ({subject}: BookSliderProps){
     
-    const worksArray = Object.values(works);
-
     return (
         <>
         <div className={styles.slider_container}>
             <IoIosArrowBack style={{position: 'absolute', top: '50%', left: '5%', cursor: 'pointer', color: '#8f8f8f'}} size="30px"/>
             <div className={styles.books_container}>
-                {Array.isArray(worksArray) && worksArray.map((work) =>
-                    <WorkTemplate {...work} key={work.key}/>
-                )}
+                {subject.map((pair) => {
+
+                    return <WorkTemplate title={pair.keyWork.title} authors={pair.keyAuthor} covers={pair.keyWork.covers} key={pair.keyWork.title}/>
+                })}
             </div>
             <IoIosArrowForward style={{position: 'absolute', top: '50%', right: '5%', cursor: 'pointer', color: '#8f8f8f'}} size="30px"/>
         </div>

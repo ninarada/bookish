@@ -1,42 +1,25 @@
-import { TypeWork } from '@/app/types/TypeWork';
 import styles from './work.module.css';
 import Image from "next/image";
 import getCovers from '@/app/api/items/getCovers';
-import getAuthor from '@/app/api/items/getAuthors';
-import extractKeyFromArray from '@/app/api/functions/extractKeyFromArray';
+import { TypeAuthor } from '@/app/types/TypeAuthor';
 
+interface WorkTemplateProps {
+    title: string;
+    authors: TypeAuthor[];
+    covers: number[];
+}
 
-export default async function WorkTemplate (work: TypeWork) {
-    const coverID = work.covers[0];
-    const cover =  getCovers('id', String(coverID));
-
-    const authorKeysArray = work.authors.map(i => i.author).map(j => j.key).map((key) => extractKeyFromArray(key));
-
-    const fetchedAuthors: Set<string> = new Set();
-
-
-    const authors: string[] = [];
-
-    for (const key of authorKeysArray) {
-        if (!fetchedAuthors.has(key)) {
-            try {
-                fetchedAuthors.add(key);
-                const author = await getAuthor(key);
-                authors.push(author.name);
-            } catch (error) {
-                throw new Error(`Unable to fetch author.`);
-            }
-        }
-    }
+export default function WorkTemplate ({ title, authors, covers }: WorkTemplateProps) {
+    const cover =  getCovers('id', String(covers[0]));
 
     return (
         <>
         <div className={styles.workCard}>
             <img src={cover} alt="book_cover" className={styles.image}/>
-            <div className={styles.title}>{work.title}</div>
+            <div className={styles.title}>{title}</div>
             <div className={styles.authors}>
-                {authors.map((name) => 
-                    <div key={name} className={styles.author}>{name} </div>
+                {authors.map((author) => 
+                    <div key={author.name} className={styles.author}>{author.name} </div>
                 )}
             </div>
         </div>
