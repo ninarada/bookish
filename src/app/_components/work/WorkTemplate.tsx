@@ -15,12 +15,16 @@ export default function WorkTemplate ({ title, authors, covers }: WorkTemplatePr
     return (
         <>
         <div className={styles.workCard}>
-            <img src={cover} alt="book_cover" className={styles.image}/>
-            <div className={styles.title}>{title}</div>
-            <div className={styles.authors}>
-                {authors.map((author) => 
-                    <div key={author.name} className={styles.author}>{author.name} </div>
-                )}
+            <div className={styles.imgContainer}>
+                <img src={cover} alt="book_cover" className={styles.image}/>
+            </div>
+            <div className={styles.textContainer}>
+                <div className={styles.title}>{title}</div>
+                <div className={styles.authors}>
+                    {authors.map((author) => 
+                        <span key={author.name} className={styles.author}>{author.name} </span>
+                    )}
+                </div>
             </div>
         </div>
         </>

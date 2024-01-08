@@ -1,35 +1,43 @@
 .workCard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 230px;
-    height: 350px;
-    border: 1px black solid;
-    text-align: center;
+    gap: 10px;
+    height: fit-content;
+    width: 15%;
+    padding: 10px 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
 }
 
-.title {
-    font-size: 1vw;
-    padding: 0px 3px;
-    margin-top: 3px;
+.workCard .imgContainer .image {
+    object-fit: cover;
+    height: 200px;
+    width: 140px;
+    border-radius: 7px;
+}
+
+.workCard .textContainer {
+    text-align: justify;  
+    color: var(--beige-warm-darker);  
+}
+
+.workCard .textContainer > *:hover {
+    color: var(--beige-warm-light); 
+    cursor: pointer; 
+}
+
+.workCard .textContainer .title {
+    font-size: medium;
     font-weight: 600;
-    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.authors {
-    font-size: 0.8vw;
-    padding-left: 3px;
-    margin-bottom: 3px;
+.workCard .textContainer .authors {
+    font-size: small;
     font-weight: 500;
-    width: fit-content;
-}
-
-.author {
-    width: fit-content;
-
-}
-
-.image {
-    height: 12vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header2 {
+    font-size: larger;
+    font-weight: 700;
+    color: var(--beige-warm-darker); 
+    padding: 30px 40px 0px 40px;
+    letter-spacing: 2px;
+}
+
+.line {
+    border-bottom: var(--beige-warm-lighter) solid 0.5px;
+    margin: 10px 50px;
+}

@@ -13,12 +13,13 @@ export default async function Browse () {
     return (
         <main>
 
-            <div>
-              <h2>Fiction</h2>
+            <div className={styles.container}>
+              <h2 className={styles.header2}>Fiction</h2>
               <BookSlider subject={fiction}/>
-              <h2>Romance</h2>
+              <div className={styles.line}></div>
+              <h2 className={styles.header2}>Romance</h2>
               <BookSlider subject={romance}/>
-
+              <div className={styles.line}></div>
             </div>
             
         </main>
