@@ -5,36 +5,10 @@ import BookSlider from "../_components/books_slider/slider";
 import { TypeWork } from "../types/TypeWork";
 import { TypeAuthor } from "../types/TypeAuthor";
 import styles from "./browse.module.css";
+import getSubject from "../api/functions/getSubject";
 
 export default async function Browse () {
-    let fictionWorks = [];
-    let fiction: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = [];
-
-    try {
-      fictionWorks = await getBooksBySubjectName('fiction', '6');
-
-      if(fictionWorks) {
-
-        await Promise.all( fictionWorks.flatMap(async (work) => {
-          const authorKeys = work.authors.map(i => extractKeyFromArray(i.author.key));
-
-          const authors: TypeAuthor[] = await Promise.all(authorKeys.map(async (authorKey) => {
-            return await getAuthor(authorKey);
-          })) 
-
-          const newEntry: { keyWork: TypeWork; keyAuthor: TypeAuthor[]} = {
-            keyWork: work,
-            keyAuthor: authors,
-          }
-          fiction.push(newEntry);
-        }));
-      }
-      
-    } catch (error) {
-      throw new Error(`Error.`);
-    }
-    
-    //<BookSlider {...fictionWorks}/>
+    const fiction: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('fiction', '6');
 
     return (
         <main>
