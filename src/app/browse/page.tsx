@@ -1,6 +1,3 @@
-import getBooksBySubjectName from "../api/items/getBooksBySubjectName";
-import getAuthor from "../api/items/getAuthors";
-import extractKeyFromArray from "../api/functions/extractKeyFromArray";
 import BookSlider from "../_components/books_slider/slider";
 import { TypeWork } from "../types/TypeWork";
 import { TypeAuthor } from "../types/TypeAuthor";
