@@ -41,7 +41,7 @@ export default function BookSlider ({subject}: BookSliderProps){
             />
             <div className={styles.books_container}>
                 {subject.slice(currentBooks, currentBooks+5).map((pair) => {
-                    return <WorkTemplate title={pair.keyWork.title} authors={pair.keyAuthor} covers={pair.keyWork.covers} key={pair.keyWork.title}/>
+                    return <WorkTemplate work={pair.keyWork} authors={pair.keyAuthor} key={pair.keyWork.key}/>
                 })}
             </div>
             <IoIosArrowForward onClick={() => nextBook()} 
@@ -54,7 +54,6 @@ export default function BookSlider ({subject}: BookSliderProps){
                 }} 
                 size="30px"
             />
-            <div className={styles.showMore}>show more</div>
         </div>
         </>
     );
