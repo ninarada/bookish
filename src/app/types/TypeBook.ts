@@ -7,10 +7,10 @@
 export interface TypeBook {
     description?: string;
     title: string;
-    covers: [];
+    covers?: [];
     subject_places?: [];
     subjects?: [];
-    key?: string;
+    key: string;
     isbn_13?: string;
     isbn_10?: string;
     number_of_pages?: number;
