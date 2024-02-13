@@ -5,9 +5,9 @@ import styles from "./browse.module.css";
 import getSubject from "../api/functions/getSubject";
 
 export default async function Browse () {
-    const fiction: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('fiction', '6');
+    const fiction: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('fiction', '10');
     
-    const romance: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('romance', '6');
+    const romance: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('romance', '10');
 
 
     return (

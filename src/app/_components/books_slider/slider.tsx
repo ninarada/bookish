@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./slider.module.css";
 import { TypeWork } from "@/app/types/TypeWork";
 import WorkTemplate from "../work/WorkTemplate";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TypeAuthor } from "@/app/types/TypeAuthor";
 
 interface BookSliderProps {
@@ -12,18 +12,48 @@ interface BookSliderProps {
 }
 
 export default function BookSlider ({subject}: BookSliderProps){
+    const [currentBooks, setCurrentBooks] = useState(0);
+
+    const nextBook = () => {
+        if (currentBooks < 5) {
+            setCurrentBooks(currentBooks+1);
+        }
+    }
+
+    const prevBook = () => {
+        if (currentBooks > 0) {
+            setCurrentBooks(currentBooks-1);
+        }
+    }
     
     return (
         <>
         <div className={styles.slider_container}>
-            <IoIosArrowBack style={{position: 'absolute', top: '40%', left: '5%', cursor: 'pointer', color: '#8f8f8f'}} size="30px"/>
+            <IoIosArrowBack onClick={() => prevBook()} 
+                style={{
+                    position: 'absolute', 
+                    top: '40%', 
+                    left: '5%', 
+                    cursor: currentBooks===0 ? 'default' : 'pointer', 
+                    color: currentBooks===0 ? '#8f8f8f' : '#6f6f6f'
+                }} 
+                size="30px"
+            />
             <div className={styles.books_container}>
-                {subject.map((pair) => {
-
+                {subject.slice(currentBooks, currentBooks+5).map((pair) => {
                     return <WorkTemplate title={pair.keyWork.title} authors={pair.keyAuthor} covers={pair.keyWork.covers} key={pair.keyWork.title}/>
                 })}
             </div>
-            <IoIosArrowForward style={{position: 'absolute', top: '40%', right: '5%', cursor: 'pointer', color: '#8f8f8f'}} size="30px"/>
+            <IoIosArrowForward onClick={() => nextBook()} 
+                style={{
+                    position: 'absolute', 
+                    top: '40%', 
+                    right: '5%', 
+                    cursor: currentBooks===5 ? 'default' : 'pointer', 
+                    color: currentBooks===5 ? '#8f8f8f' : '#6f6f6f'
+                }} 
+                size="30px"
+            />
             <div className={styles.showMore}>show more</div>
         </div>
         </>

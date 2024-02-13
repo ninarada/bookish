@@ -1,57 +1,54 @@
 .container {
     background-color: var(--random-color3);
-    padding: 0.6rem 0; 
     position: sticky; 
     top: 0; 
     z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
 }
 
 .container .leftTabs {
-   width: fit-content;
-   position: relative;
-   left: 0;
+   display: flex;
+   flex: 1; 
+   justify-content: flex-start; 
+   height: 100%;
 }
 
-.container .leftTabs .tabBaseClass {
-    white-space: nowrap;
-    padding: 0.7rem 1.25rem; 
-    font-size: 1rem; 
-    color: var(--beige-warm-darker);
-    font-weight: 500;
+.container .rightTabs {
+    display: flex;
+    flex: 1; 
+    justify-content: flex-end; 
 }
-
-.container .leftTabs .tabBaseClass:hover {
-    background-color: #ebe2d7;
-    color: #aa8a63;
-}
-
-.container .leftTabs .tabActiveClass {
-    color: var(--beige-warm-darker);
-    background-color: var(--beige-warm-lighter);
-    pointer-events: none;
- }
 
 .container .logo {
-    position:absolute;
-    top: 0; 
-    left: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    text-align: center;
     color: var(--beige-warm-darker);
     font-size: xx-large;
     letter-spacing: 2px;
 }
 
-.container .rightTabs {
-    width: fit-content;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
+.leftTabs .tabBaseClass {
+    white-space: nowrap;
+    padding: 0.7rem 1.25rem; 
+    font-size: 1rem; 
+    color: var(--beige-warm-darker);
+    font-weight: 500;
     display: flex;
     align-items: center;
 }
+
+.leftTabs .tabBaseClass:hover {
+    background-color: #ebe2d7;
+    color: #aa8a63;
+}
+
+.leftTabs .tabActiveClass {
+    color: var(--beige-warm-darker);
+    background-color: var(--beige-warm-lighter);
+    pointer-events: none;
+ }
 
 .rightTabs .icon {
     border-radius: 50%;

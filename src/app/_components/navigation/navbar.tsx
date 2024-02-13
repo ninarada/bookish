@@ -24,10 +24,8 @@ export default function NavBar ({pages}: NavbarProps) {
         <nav className={styles.container}>
             <div className={styles.leftTabs}>
                 {Object.entries(pages).map(([name, path])=> (
-                    <Link href={path} key={name}>
-                        <span className={`${styles.tabBaseClass} ${path ===pathName ? styles.tabActiveClass : ''}`}>
-                            {name}
-                        </span>
+                    <Link href={path} key={name} className={`${styles.tabBaseClass} ${path ===pathName ? styles.tabActiveClass : ''}`}>
+                        {name}
                     </Link>
                 ))}
             </div>
