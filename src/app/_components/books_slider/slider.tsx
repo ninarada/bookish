@@ -13,9 +13,10 @@ interface BookSliderProps {
 
 export default function BookSlider ({subject}: BookSliderProps){
     const [currentBooks, setCurrentBooks] = useState(0);
+    const subjectLenght = subject.length;
 
     const nextBook = () => {
-        if (currentBooks < 5) {
+        if (currentBooks < subjectLenght-5) {
             setCurrentBooks(currentBooks+1);
         }
     }
@@ -49,8 +50,8 @@ export default function BookSlider ({subject}: BookSliderProps){
                     position: 'absolute', 
                     top: '40%', 
                     right: '5%', 
-                    cursor: currentBooks===5 ? 'default' : 'pointer', 
-                    color: currentBooks===5 ? '#8f8f8f' : '#6f6f6f'
+                    cursor: currentBooks===subjectLenght-5 ? 'default' : 'pointer', 
+                    color: currentBooks===subjectLenght-5 ? '#8f8f8f' : '#6f6f6f'
                 }} 
                 size="30px"
             />

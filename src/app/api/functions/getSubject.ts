@@ -1,7 +1,7 @@
 import { TypeAuthor } from "@/app/types/TypeAuthor";
 import { TypeWork } from "@/app/types/TypeWork";
 import getBooksBySubjectName from "../items/getBooksBySubjectName";
-import getAuthor from "../items/getAuthors";
+import getAuthor from "../items/getAuthor";
 import extractKeyFromArray from "./extractKeyFromArray";
 
 export default async function getSubject (subjectName:string, limit:string) {

@@ -23,7 +23,7 @@ export default function WorkTemplate ({work, authors}: WorkTemplateProps) {
                 <div className={styles.title}>{work.title}</div>
                 <div className={styles.authors}>
                     {authors.map((author) => 
-                        <span key={author.name} className={styles.author}>{author.name} </span>
+                        <span key={author.key} className={styles.author}>{author.name} </span>
                     )}
                 </div>
             </div>

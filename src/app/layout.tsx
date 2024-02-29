@@ -26,7 +26,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <body className={lora.className}>
         <NavBar pages={pages}/>
         {children}
-        </body>
+      </body>
     </html>
   )
 }

@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -21,6 +19,16 @@
   --random-color2: #efe3d6;
   --random-color3: #f1e9e1;
   --random-color4: #f5f0ea;
+
+  --chocolate-cosmos: #541023ff;
+  --chocolate-cosmos2: #581328ff;
+  --old-rose: #D57D82ff;
+  --licorice: #1D020Bff;
+  --quinacridone-magenta: #913B62ff;
+  --burgundy: #861D2Eff;
+  --chinese-violet: #9E6685ff;
+  --tyrian-purple: #5C1B45ff;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,5 +41,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: var(--random-color4);
+  font-family: 'Lora', serif;
+  background-color: var(--chocolate-cosmos);
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--chinese-violet); 
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--quinacridone-magenta);
 }

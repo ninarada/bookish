@@ -3,7 +3,7 @@ import styles from "./bookPage.module.css"
 import getCovers from "@/app/api/items/getCovers";
 import getWork from "@/app/api/items/getWorks";
 import { TypeAuthor } from "@/app/types/TypeAuthor";
-import getAuthor from "@/app/api/items/getAuthors";
+import getAuthor from "@/app/api/items/getAuthor";
 import extractKeyFromArray from "@/app/api/functions/extractKeyFromArray";
 
 interface Params {

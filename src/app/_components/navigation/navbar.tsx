@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { Playfair_Display } from 'next/font/google'
+import { useEffect, useState } from "react";
 
 const playfair = Playfair_Display({ 
     weight: [ '800'],
@@ -17,11 +18,30 @@ interface NavbarProps {
 }
 
 export default function NavBar ({pages}: NavbarProps) {
+    const [scrolled, setScrolled] = useState(false);
     const pathName = usePathname();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    console.log(pathName);
 
     return (
         <>
-        <nav className={styles.container}>
+        <nav className={`${styles.container} ${(pathName==="/" && scrolled) || (pathName!=="/")  ? styles.scrolled : ''}`}>
             <div className={styles.leftTabs}>
                 {Object.entries(pages).map(([name, path])=> (
                     <Link href={path} key={name} className={`${styles.tabBaseClass} ${path ===pathName ? styles.tabActiveClass : ''}`}>

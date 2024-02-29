@@ -7,13 +7,9 @@ export default function Home() {
     <>
     <main>
       <div className={styles.frame1}>
-        <div className={styles.leftHero}>
-          <h1 className={styles.header1}>Welcome to Your Literary Haven!</h1>
-          <p className={styles.p1}>Discover, Track, and Dive into the World of Books.</p>
+        <div className={styles.container1}>
+          <h1 className={styles.logo}>bookish</h1>
           <SearchBar />
-        </div>
-        <div className={styles.rightHero}>
-          <Image src={'/images/books.png'} alt="hero" height={500} width={500}></Image>
         </div>
       </div>
 

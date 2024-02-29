@@ -6,7 +6,7 @@ export default function SearchBar () {
     return (
         <>
         <div className={styles.search}>
-            <input type="text" placeholder='Title / Author / ISBN' className={styles.input} />
+            <input type="text" placeholder='Search by Title / Author / ISBN' className={styles.input} />
             <button type='submit' className={styles.searchIcon}>
                 <Image src="/search.svg" alt="" width={30} height={30} className={styles.searchSVG}/>
             </button>
