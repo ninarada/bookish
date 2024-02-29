@@ -6,19 +6,19 @@
 .header2 {
     font-size: larger;
     font-weight: 700;
-    color: var(--beige-warm-darker); 
+    color: var(--old-rose); 
     padding: 30px 40px 0px 40px;
     letter-spacing: 2px;
     cursor: pointer;
 }
 
 .line {
-    border-bottom: var(--beige-warm-lighter) solid 0.5px;
+    border-bottom: var(--quinacridone-magenta) solid 0.5px;
     margin: 10px 50px;
 }
 
 .showMore {
-    color: var(--beige-warm-dark);
+    color: var(--quinacridone-magenta);
     cursor: pointer;
     text-decoration: underline;
     text-align: center;

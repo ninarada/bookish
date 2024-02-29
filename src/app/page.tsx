@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import styles from "./home.module.css";
 import SearchBar from './_components/search_bar/search-bar';
+import BookSlider from './_components/books_slider/slider';
+import Link from 'next/link';
+import { TypeWork } from './types/TypeWork';
+import { TypeAuthor } from './types/TypeAuthor';
+import makeSubject from './api/nytimes/makeSubject';
 
-export default function Home() {
+export default async function Home() {
+  const bestsellers: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] =  await makeSubject('hardcover-fiction', '2023-12-05', '2023-12-20');
+
   return (
     <>
     <main>
@@ -11,6 +18,12 @@ export default function Home() {
           <h1 className={styles.logo}>bookish</h1>
           <SearchBar />
         </div>
+      </div>
+
+      <div className={styles.hero_bestsellers}>
+        <h2 className={styles.header2}>Bestsellers</h2>
+        <BookSlider subject={bestsellers}/>
+        <Link href={`browse/bestsellers`} className={styles.showMore}>show more</Link>
       </div>
 
       <div className={styles.frame2}>

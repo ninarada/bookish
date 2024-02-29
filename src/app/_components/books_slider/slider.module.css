@@ -17,11 +17,11 @@
 }
 
 .showMore {
-    color: var(--beige-warm-dark);
+    color: var(--quinacridone-magenta);
     cursor: pointer;
     text-decoration: underline;
 }
 
 .showMore:hover{
-    color: var(--beige-warm-lighter);
+    opacity: 60%;
 }

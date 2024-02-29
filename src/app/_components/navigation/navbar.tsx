@@ -37,8 +37,6 @@ export default function NavBar ({pages}: NavbarProps) {
         };
     }, []);
 
-    console.log(pathName);
-
     return (
         <>
         <nav className={`${styles.container} ${(pathName==="/" && scrolled) || (pathName!=="/")  ? styles.scrolled : ''}`}>

@@ -49,13 +49,45 @@
     cursor: default;
 }
 
+.hero_bestsellers {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero_bestsellers .header2{
+    color: var(--old-rose);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.24);
+    font-size: 2.5vw;
+    font-weight: 700;
+    padding: 30px 40px 0px 40px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.hero_bestsellers .header2:hover {
+    opacity: 70%;
+}
+
+.hero_bestsellers .showMore {
+    color: var(--quinacridone-magenta);
+    font-size: larger;
+    font-weight: 700;
+    padding: 30px 40px 0px 40px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.hero_bestsellers .showMore:hover {
+    opacity: 70%;
+}
+
 .frame2{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    background: rgb(88,19,40);
-background: linear-gradient(180deg, rgba(88,19,40,1) 19%, rgba(97,25,49,1) 43%, rgba(112,36,64,1) 69%, rgba(145,59,98,1) 100%);
 }
 
 .feature {

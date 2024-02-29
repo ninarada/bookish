@@ -26,12 +26,12 @@
     color: var(--old-rose);
     font-size: xx-large;
     letter-spacing: 2px;
-    opacity: 0; /* Initially transparent */
-    transition: opacity 0.5s ease; /* Smooth transition */
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
 }
 
 .container.scrolled .logo {
-    opacity: 1; /* Visible after scrolling */
+    opacity: 1; 
 }
 
 
