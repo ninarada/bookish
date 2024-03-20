@@ -6,10 +6,13 @@
   --chocolate-cosmos: #541023ff;
   --chocolate-cosmos2: #581328ff;
   --old-rose: #D57D82ff;
+  --old-rose2:rgb(234, 177, 180);
+  --older-rose: rgb(179, 105, 109);
   --licorice: #1D020Bff;
   --quinacridone-magenta: #913B62ff;
   --burgundy: #861D2Eff;
   --chinese-violet: #9E6685ff;
+  --chinese-violet-lighter: rgb(200, 159, 181);
   --tyrian-purple: #5C1B45ff;
 
 }
@@ -39,4 +42,8 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--quinacridone-magenta);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tyrian-purple);
 }

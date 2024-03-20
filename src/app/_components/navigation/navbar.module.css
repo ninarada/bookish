@@ -23,7 +23,10 @@
 
 .container .logo {
     text-align: center;
-    color: var(--old-rose);
+    color: var(--quinacridone-magenta);
+    background: linear-gradient(to bottom, #D57D82ff 37%, #9e6685e6  100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: xx-large;
     letter-spacing: 2px;
     opacity: 0; 
@@ -32,6 +35,10 @@
 
 .container.scrolled .logo {
     opacity: 1; 
+}
+
+.container.scrolled {
+    background-color: rgba(92, 27, 69, 0.9);
 }
 
 
@@ -61,7 +68,7 @@
     display: block;
     height: 2rem;
     width: 2rem;
-    background: var(--old-rose);
+    background: var(--older-rose);
     margin-right: 15px;
 }
 

@@ -12,7 +12,14 @@ interface Params {
 
 export default async function BookPage({ params }: { params: Params }) {
     const work: TypeWork = await getWork(params.bookId); 
-    const authorKeys = work.authors.map(i => extractKeyFromArray(i.author.key));
+    const authorKeys = work.authors.map(i => {
+        if(i.key!=undefined) {
+            return extractKeyFromArray(i.key)
+        } else {
+            return ''
+        }
+        
+    });
     const authors: TypeAuthor[] = await Promise.all(authorKeys.map(async (authorKey) => {
         return await getAuthor(authorKey);
     })) 

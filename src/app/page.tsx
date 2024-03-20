@@ -9,7 +9,8 @@ import makeSubject from './api/nytimes/makeSubject';
 
 export default async function Home() {
   const bestsellers: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] =  await makeSubject('hardcover-fiction', '2023-12-05', '2023-12-20');
-
+  //bestsellers.map(i => console.log(i))
+  
   return (
     <>
     <main>
@@ -28,16 +29,31 @@ export default async function Home() {
 
       <div className={styles.frame2}>
         <div className={styles.feature}>
-          <h2 className={styles.header2}>Discover</h2>
-          <p className={styles.p2}>Explore a diverse library of books across genres. Find hidden gems and discover new authors.</p>
+          <div className={styles.icon}>
+            <div className={styles.centeredImage}>
+              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+            </div>
+          </div>
+          <h2 className={styles.title}>Discover</h2>
+          <p className={styles.text}>Explore a diverse library of books across genres and find hidden gems.</p>
         </div>
         <div className={styles.feature}>
-          <h2 className={styles.header2}>Track</h2>
-          <p className={styles.p2}>Set reading goals, track your progress, and organize your reading list efficiently.</p>
+          <div className={styles.icon}>
+            <div className={styles.centeredImage}>
+              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+            </div>
+          </div>
+          <h2 className={styles.title}>Track</h2>
+          <p className={styles.text}>Set reading goals, track your progress, and organize your reading list efficiently.</p>
         </div>
         <div className={styles.feature}>
-          <h2 className={styles.header2}>Connect</h2>
-          <p className={styles.p2}>Join a vibrant community of book enthusiasts. Share your thoughts, recommendations, and connect with like-minded readers.</p>
+          <div className={styles.icon}>
+            <div className={styles.centeredImage}>
+              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+            </div>
+          </div>
+          <h2 className={styles.title}>Connect</h2>
+          <p className={styles.text}>Share your thoughts, recommendations, and connect with like-minded readers.</p>
         </div>
       </div>
     </main>

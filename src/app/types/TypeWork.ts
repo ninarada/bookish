@@ -3,12 +3,9 @@ export interface TypeWork {
     title: string;
     covers: number[];
     authors: {
-        author: {
+        
             key: string;
-        };
-        type?: {
-            key?: string;
-        };
+       
     }[];
     type?: {
         key?: string;

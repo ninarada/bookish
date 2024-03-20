@@ -21,28 +21,13 @@ export default async function makeSubject(list: string, bestsellers_date: string
 
         await Promise.all(firstIsbn10s.map(async (isbn10:string) => {
             if (isbn10 !== undefined) {
-                const work = await getWorkByISBN(isbn10);
-
-                const authorKeys = work.authors.map(i => i.author?.key.split('/').pop() || '');
-                const authors: TypeAuthor[] = (await Promise.all(authorKeys.map(async (authorKey) => {
-                    try {
-                        return await getAuthor(authorKey);
-                    } catch (error) {
-                        console.error(`Error fetching author: ${error}`);
-                        // Handle error or return a default value if appropriate
-                        return undefined; // or return a default value
-                    }
-                }))).filter((author): author is TypeAuthor => !!author);
-
-                const newEntry: { keyWork: TypeWork; keyAuthor: TypeAuthor[]} = {
-                    keyWork: work,
-                    keyAuthor: authors,
-                }
-
-                subject.push(newEntry);
+                const workAndAuthors = await getWorkByISBN(isbn10);
+                
+                subject.push(workAndAuthors);
                 
             }
         }));
+        //subject.map(i => console.log(i))
         return subject;
         
     } catch (error) {

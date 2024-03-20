@@ -1,0 +1,26 @@
+.results {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.resultTemplate {
+    display: flex;
+    gap: 20px;
+    height: 13vw;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    border-bottom: solid var(--tyrian-purple) 1px;
+}
+
+.imgBox {
+    height: 100%;
+}
+
+.image {
+    height: 100%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}

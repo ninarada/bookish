@@ -22,6 +22,7 @@ export default function NavBar ({pages}: NavbarProps) {
     const pathName = usePathname();
 
     useEffect(() => {
+        
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setScrolled(true);
@@ -48,7 +49,7 @@ export default function NavBar ({pages}: NavbarProps) {
                 ))}
             </div>
             <div className={styles.logo}>
-                    <span className={playfair.className}>bookish</span>
+                    bookish
             </div>
             <div className={styles.rightTabs}>
                 <span className={styles.icon}>

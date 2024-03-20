@@ -1,9 +1,18 @@
 import { TypeWork } from "@/app/types/TypeWork";
 
-export default async function getWork(OLID: string): Promise<TypeWork> {
+export default async function getWork(OLID: string){
+
+    if(OLID ===''){
+        return null;
+    }
 
     try {
         const response = await fetch(`https://openlibrary.org/works/${OLID}.json`);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch work with OLID: ${OLID}. Status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         const fetchedWork: TypeWork = {
@@ -17,6 +26,7 @@ export default async function getWork(OLID: string): Promise<TypeWork> {
         return fetchedWork;
         
     } catch (error) {
-        throw new Error(`Unable to fetch work with OLID: ${OLID}`);
+        return null;
+        //throw new Error(`Unable to fetch work with OLID: ${OLID}`);
     }
 }

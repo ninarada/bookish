@@ -12,6 +12,7 @@
     outline: none;
     background-color: transparent;
     width: 70%;
+    color: rgb(231, 196, 215);
 }
 
 .input::placeholder {
@@ -20,4 +21,24 @@
 
 .search .searchIcon {
     cursor: pointer;
-    filter: brightness(0) saturate(100%) invert(78%) sepia(5%) saturate(2718%) hue-rotate(285deg) brightness(87%) contrast(77%);}
+    filter: brightness(0) saturate(100%) invert(78%) sepia(5%) saturate(2718%) hue-rotate(285deg) brightness(87%) contrast(77%);
+}
+
+.filters {
+    background-color: var(--chinese-violet);
+    color: var(--tyrian-purple); 
+    display: flex;   
+}
+
+.filters .filterTab {
+    padding: 20px 40px;
+    cursor: pointer;
+    font-size: 1.3vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.filters .filterTabActive {
+    background-color: var(--chinese-violet-lighter);
+    cursor: default;
+}
