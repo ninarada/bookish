@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const pages: Record<string, `/${string}`> = {
   home: "/",
   browse: "/browse",
-  blogs: "/blogs",
+  search: "/search",
   profile: "/profile",
 }
 

@@ -11,23 +11,20 @@ const SearchBar: React.FC<{ }> = ({  }) => {
     const [searchInput, setSearchInput] = useState('');
     let inn;
     const router = useRouter();
-    const pathname = usePathname();                 ///blogs
-    const searchParams = useSearchParams();         //search=aa
+    const pathname = usePathname();                 
+    const searchParams = useSearchParams();         
 
     const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-        //inn = event.target.value;
-        //console.log("inn="+inn);
         setSearchInput(event.target.value);
     }
 
     const handleSearch = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        router.push(`/blogs?search=${searchInput}`);
+        router.push(`/search?search=${searchInput}`);
         setTimeout(() => {
             window.location.reload();
-        }, 1000); // Adjust the delay as needed
+        }, 1000); 
     };
-    
 
     return (
         <>
