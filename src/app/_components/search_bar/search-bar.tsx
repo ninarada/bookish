@@ -20,10 +20,10 @@ const SearchBar: React.FC<{ }> = ({  }) => {
 
     const handleSearch = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        router.push(`/search?search=${searchInput}`);
-        setTimeout(() => {
+        router.push(`/search?search=${encodeURIComponent(searchInput)}`);
+        /*setTimeout(() => {
             window.location.reload();
-        }, 1000); 
+        }, 2000); */
     };
 
     return (
