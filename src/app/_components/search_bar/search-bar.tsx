@@ -3,7 +3,6 @@
 import styles from "./search.module.css";
 import Image from "next/image";
 import React, { SetStateAction, useState } from "react";
-import SearchResults from "./searchResultsA";
 import { useRouter } from 'next/navigation';
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -18,12 +17,9 @@ const SearchBar: React.FC<{ }> = ({  }) => {
         setSearchInput(event.target.value);
     }
 
-    const handleSearch = (e: { preventDefault: () => void; }) => {
+    const handleSearch = e => {
         e.preventDefault();
         router.push(`/search?search=${encodeURIComponent(searchInput)}`);
-        /*setTimeout(() => {
-            window.location.reload();
-        }, 2000); */
     };
 
     return (

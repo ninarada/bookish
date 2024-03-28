@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from 'next/navigation';
-import SearchResultsA from "../_components/search_bar/searchResultsA";
+import SearchResultsB from '../_components/search_bar/searchResultB';
 
 export default function searchResults (){
     const searchParams = useSearchParams();         //search=aa
@@ -8,7 +8,7 @@ export default function searchResults (){
 
     return(
         <>
-        <SearchResultsA searchInput={searchValue}/>
+        <SearchResultsB searchInput={searchValue}/>
         </>
     )
 }

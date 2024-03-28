@@ -11,29 +11,47 @@ export default async function getWorkByISBN(inputISBN: string) {
         return null;
     }
 
-    const response = await fetch(`https://openlibrary.org/isbn/${inputISBN}.json`);
+    let response = null;
 
-    if (!response.ok) {
-        console.log(`Failed to fetch work with inputISBN: ${inputISBN}. Status: ${response.status}`);
+    try {
+        response = await fetch(`https://openlibrary.org/isbn/${inputISBN}.json`);
+    } catch (error) {
+        response = null;
+    }
+
+    if (response?.status !== 200 || response === null) {
+        //console.log(`Failed to fetch work with inputISBN: ${inputISBN}. Status: ${response.status}`);
         return null;
     }
 
     const data = await response.json();
 
-    const fetchedBook = data.key;
-    const fetchedBook2 = extractKeyFromArray(fetchedBook);
+    
+    if (!data || Object.keys(data).length === 0) {
+        // No data returned for the given ISBN
+        return null;
+    }
 
-    const fetchedWork= await getWork(fetchedBook2);
+    let fetchedWork= null; 
+    
+    fetchedWork =await getWork(extractKeyFromArray(data.key));
 
-    if (fetchedWork!==null) {
+    if (fetchedWork!==null && fetchedWork.authors !== undefined) {
         const authorKeys = fetchedWork.authors.map(i => extractKeyFromArray(i.key));                
 
         const authors: TypeAuthor[] = (await Promise.all(authorKeys.map(async (authorKey) => {
+            let aut =null;
             try {
-                return await getAuthor(authorKey);
+                
+                aut = await getAuthor(authorKey);
+                if(aut !== null) {
+                    return aut;
+                }
             } catch (error) {
-                console.error(`Error fetching author: ${error}`);
-                return undefined; // or return a default value
+                //console.error(`Error fetching author: ${error}`);
+                if(aut !== null) {
+                    return aut;
+                }
             }
         }))).filter((author): author is TypeAuthor => !!author);
 
@@ -44,4 +62,6 @@ export default async function getWorkByISBN(inputISBN: string) {
         
         return workAndAuthors;
     }
+
+    return null;
 }
