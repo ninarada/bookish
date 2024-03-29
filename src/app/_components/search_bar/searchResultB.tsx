@@ -3,6 +3,8 @@ import { useRouter } from 'next/navigation';
 import { usePathname, useSearchParams } from "next/navigation";
 import getWorkByTitle from "@/app/api/items/getWorkByTitle";
 import styles from "./results.module.css";
+import Link from "next/link";
+import extractKeyFromArray from "@/app/api/functions/extractKeyFromArray";
 
 interface SearchResult {
     keyWork: {
@@ -24,11 +26,6 @@ const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
     const [resultByTitle, setResultByTitle] = useState<SearchResult[]>([]);
     const router = useRouter();
     const searchParams = useSearchParams().get('search');
-    
-    if(searchParams !== null) {
-        console.log("searchParams: "+ searchParams.toString());
-    }
-    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,7 +34,7 @@ const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
                     const result = await getWorkByTitle(searchInput);
                     setResultByTitle(result as SearchResult[]);
                 } else {
-                    setResultByTitle([]); // Reset resultByTitle if searchInput is empty
+                    setResultByTitle([]); 
                 }
             } catch (error) {
                 console.log("Error in searchResultA " + error);
@@ -58,7 +55,10 @@ const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
         <div className={styles.results}>
             {resultByTitle.map(i => (
                 i && i.keyWork && (
-                    <div key={i.keyWork.key} className={styles.resultTemplate} onClick={() => handleClick(i.keyWork.key)}>
+                    <Link key={i.keyWork.key} 
+                            href={`/works/${extractKeyFromArray(i.keyWork.key)}`}
+                            className={styles.resultTemplate} 
+                            onClick={() => handleClick(i.keyWork.key)}>
                         <div className={styles.imgBox}>
                             <img src={`https://covers.openlibrary.org/b/id/${i.keyWork.covers?.[0]}-M.jpg`} alt="no" className={styles.image}/>
                         </div>
@@ -72,7 +72,7 @@ const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 )
             ))}
         </div>

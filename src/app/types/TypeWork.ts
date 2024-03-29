@@ -10,8 +10,12 @@ export interface TypeWork {
     type?: {
         key?: string;
     };
-    description: string;
-    
+    description?: string;
+    pagination?: string;
+    publish_date?: string;
+    publishers?: string[];
+    isbn_13?: string[];
+
     subject_places?: string[];
     subjects?: string[];
     subject_people?: string[];

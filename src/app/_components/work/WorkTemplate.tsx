@@ -15,7 +15,7 @@ export default function WorkTemplate ({work, authors}: WorkTemplateProps) {
 
     return (
         <>
-        <Link href={`/${extractKeyFromArray(work.key)}`} className={styles.workCard}>
+        <Link href={`/works/${extractKeyFromArray(work.key)}`} className={styles.workCard}>
             <div className={styles.imgContainer}>
                 <img src={cover} alt="book_cover" className={styles.image}/>
             </div>

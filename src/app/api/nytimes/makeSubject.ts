@@ -22,8 +22,9 @@ export default async function makeSubject(list: string, bestsellers_date: string
         await Promise.all(firstIsbn10s.map(async (isbn10:string) => {
             if (isbn10 !== undefined) {
                 const workAndAuthors = await getWorkByISBN(isbn10);
-                
-                subject.push(workAndAuthors);
+                if(workAndAuthors != null) {
+                    subject.push(workAndAuthors);
+                }
                 
             }
         }));
@@ -32,6 +33,6 @@ export default async function makeSubject(list: string, bestsellers_date: string
         
     } catch (error) {
         console.log(error);
-        throw new Error(`Unable to fetch bestseller list.`);
+        throw new Error(`Unable to fetch bestseller list. ${error}`);
     }
 }

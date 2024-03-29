@@ -1,0 +1,86 @@
+.mainBox {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.workBox {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 30px;
+    min-height: 100vh;  
+    width: 100vw;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+    gap: 3vh;
+}
+
+.leftSide .image {
+    width: 25vh;
+    height: 40vh;
+    image-rendering: optimizeQuality;
+    object-fit: cover;
+}
+
+.btn {
+    background-color: var(--quinacridone-magenta);
+    color: var(--chinese-violet-lighter);
+    border-radius: 5vw;
+    padding: 10px 30px 10px 30px;
+    font-size: 1.7vw;
+    width: 20vw;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--chinese-violet);
+    color: var(--chinese-violet-lighter);
+    cursor: pointer;
+}
+
+.rightSide {
+    padding-top: 10vh;
+    color: var(--older-rose);
+    padding-right: 5vw;
+}
+
+.textContainer .title{
+    font-size: 3.5vw;
+    font-weight: 700;
+    color: var(--older-rose2);
+    text-shadow: 0px 2px 2px black;
+}
+
+.textContainer .authors {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 1.5vw;
+    color: var(--old-rose2);
+}
+
+.textContainer .authors .author{
+    
+}
+
+.textContainer .description {
+    margin-top: 2vw;
+    color: var(--old-rose2);
+    text-align: justify;
+    line-height: 2vw;
+    font-size: 1.2vw;
+    padding-bottom: 1vw;
+    word-break: break-word;
+}
+
+.textContainer .description--expended
+
+.textContainer .info {
+    padding-top: 0.5vw;
+    font-weight: 600;
+}
