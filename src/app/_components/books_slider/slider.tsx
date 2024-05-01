@@ -48,7 +48,7 @@ export default function BookSlider ({subject}: BookSliderProps){
                     top: '40%', 
                     left: '5%', 
                     cursor: currentBooks===0 ? 'default' : 'pointer', 
-                    color: currentBooks===0 ? '#8f8f8f' : '#6f6f6f'
+                    color: currentBooks===0 ? '#9E5256' : '#B3696D'
                 }} 
                 size="30px"
             />
@@ -63,7 +63,7 @@ export default function BookSlider ({subject}: BookSliderProps){
                     top: '40%', 
                     right: '5%', 
                     cursor: currentBooks===subjectLenght - (isMobile ? 1 : 5) ? 'default' : 'pointer', 
-                    color: currentBooks===subjectLenght - (isMobile ? 1 : 5) ? '#8f8f8f' : '#6f6f6f'
+                    color: currentBooks===subjectLenght - (isMobile ? 1 : 5) ? '#9E5256' : '#B3696D'
                 }} 
                 size="30px"
             />
