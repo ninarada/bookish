@@ -5,7 +5,7 @@ import { TypeAuthor } from "@/app/types/TypeAuthor";
 import getAuthor from "./getAuthor";
 
 //mozes izbrisat ovaj file
-export default async function getWorkByTitle(inputTitle: string) {
+export default async function getWorkByTitle(inputTitle: string, optional?: number) {
 
     if(inputTitle === '') {
         return null;
@@ -30,7 +30,7 @@ export default async function getWorkByTitle(inputTitle: string) {
     }
 
     const worksArrayPromise = Promise.all(fWorks.map(async (workKey: string) => {
-        const fetchedWork= await getWork(workKey);
+        const fetchedWork= await getWork(workKey, 1);
 
         if (fetchedWork!==null && fetchedWork!==undefined && fetchedWork.authors !== undefined) {
             const authorKeys = fetchedWork.authors.map(i => extractKeyFromArray(i.author.key));                

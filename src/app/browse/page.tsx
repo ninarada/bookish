@@ -7,8 +7,8 @@ import Link from "next/link";
 import makeSubject from "../api/nytimes/makeSubject";
 
 export default async function Browse () {
-    const fiction: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('fiction', '10');
-    const romance: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] = await getSubject('romance', '10');
+    const fiction = await getSubject('fiction', '10');
+    const romance = await getSubject('romance', '10');
     const bestsellers: {keyWork: TypeWork, keyAuthor: TypeAuthor[]} [] =  await makeSubject('hardcover-fiction', '2023-12-05', '2023-12-20');
 
     return (
@@ -21,12 +21,12 @@ export default async function Browse () {
               <div className={styles.line}></div>
 
               <Link href={`browse/fiction`}><h2 className={styles.header2}>Fiction</h2></Link>
-              <BookSlider subject={fiction}/>
+              {fiction!=undefined && <BookSlider subject={fiction}/>} 
               <Link href={`browse/fiction`} className={styles.showMore}>show more</Link>
               <div className={styles.line}></div>
 
               <Link href={`browse/romance`}><h2 className={styles.header2}>Romance</h2></Link>
-              <BookSlider subject={romance}/>
+              {romance!=undefined && <BookSlider subject={romance}/>} 
               <Link href={`browse/romance`} className={styles.showMore}>show more</Link>
               <div className={styles.line}></div>
 

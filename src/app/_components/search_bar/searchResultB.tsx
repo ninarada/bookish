@@ -53,7 +53,7 @@ const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
 
     return (
         <div className={styles.results}>
-            {resultByTitle.map(i => (
+            {resultByTitle?.map(i => (
                 i && i.keyWork && (
                     <Link key={i.keyWork.key} 
                             href={`/works/${extractKeyFromArray(i.keyWork.key)}`}

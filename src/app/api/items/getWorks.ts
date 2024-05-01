@@ -1,14 +1,22 @@
 import { TypeWork } from "@/app/types/TypeWork";
 
-export default async function getWork(OLID: string){
+export default async function getWork(OLID: string, optional?: number){
     let response = null;
+    let baseURL;
+
+    if(optional!=undefined) {
+        baseURL = `https://cors-anywhere.herokuapp.com/https://openlibrary.org/books/${OLID}.json`;
+    }
+    else {
+        baseURL = `https://openlibrary.org/books/${OLID}.json`;
+    }
 
     if(OLID ===''){
         return null;
     }
 
     try {
-        response = await fetch(`https://cors-anywhere.herokuapp.com/https://openlibrary.org/books/${OLID}.json`);
+        response = await fetch(baseURL);
        
     } catch (error) {
         return null;

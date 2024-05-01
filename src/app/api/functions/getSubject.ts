@@ -32,6 +32,6 @@ export default async function getSubject (subjectName:string, limit:string) {
         return fiction;
         
       } catch (error) {
-        throw new Error(`Error.`);
+        console.log(error);
       }
 }
