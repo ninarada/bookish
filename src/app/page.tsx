@@ -31,7 +31,7 @@ export default async function Home() {
         <div className={styles.feature}>
           <div className={styles.icon}>
             <div className={styles.centeredImage}>
-              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+              <Image src="search.svg" alt="Icon" width={100} height={100} />
             </div>
           </div>
           <h2 className={styles.title}>Discover</h2>
@@ -40,7 +40,7 @@ export default async function Home() {
         <div className={styles.feature}>
           <div className={styles.icon}>
             <div className={styles.centeredImage}>
-              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+              <Image src="note.svg" alt="Icon" width={100} height={100} />
             </div>
           </div>
           <h2 className={styles.title}>Track</h2>
@@ -49,7 +49,7 @@ export default async function Home() {
         <div className={styles.feature}>
           <div className={styles.icon}>
             <div className={styles.centeredImage}>
-              <Image src="profile.svg" alt="Icon" width={100} height={100} />
+              <Image src="users.svg" alt="Icon" width={100} height={100} />
             </div>
           </div>
           <h2 className={styles.title}>Connect</h2>
