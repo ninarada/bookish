@@ -151,6 +151,7 @@
     .frame1 {
         height: 40vh;
         background-position: center;
+        margin-top: 0px;
     }
 
     .frame1 .container1 {
