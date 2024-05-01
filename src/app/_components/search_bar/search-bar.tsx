@@ -4,20 +4,16 @@ import styles from "./search.module.css";
 import Image from "next/image";
 import React, { SetStateAction, useState } from "react";
 import { useRouter } from 'next/navigation';
-import { usePathname, useSearchParams } from "next/navigation";
 
 const SearchBar: React.FC<{ }> = ({  }) => {
     const [searchInput, setSearchInput] = useState('');
-    let inn;
     const router = useRouter();
-    const pathname = usePathname();                 
-    const searchParams = useSearchParams();         
 
     const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setSearchInput(event.target.value);
     }
 
-    const handleSearch = e => {
+    const handleSearch = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         router.push(`/search?search=${encodeURIComponent(searchInput)}`);
     };

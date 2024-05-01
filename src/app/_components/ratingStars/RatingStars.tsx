@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const RatingStars = () => {
   const [rating, setRating] = useState(0); // State to track the rating
 
-  const handleStarClick = (index) => {
+  const handleStarClick = (index: number) => {
     // Update the rating when a star is clicked
     setRating(index + 1);
   };
