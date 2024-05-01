@@ -3,6 +3,7 @@ export interface TypeWork {
     title: string;
     covers: number[];
     authors: {
+            author?: any;
         
             key: string;
        
