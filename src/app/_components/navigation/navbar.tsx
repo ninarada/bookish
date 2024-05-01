@@ -61,16 +61,10 @@ export default function NavBar ({pages}: NavbarProps) {
             </div>
             <div className={styles.rightTabs}>
                 <span className={styles.icon}>
-                    <Image src="/search.svg" alt="searchIcon" width={50} height={50} className={styles.iconSVG}/>
-                </span>
-                <span className={styles.icon}>
                     <Image src="/notification.svg" alt="notifIcon" width={50} height={50} className={styles.iconSVG}/>
                 </span>
                 <span className={styles.icon}>
                     <Image src="/messages.svg" alt="nmessageIcon" width={50} height={50} className={styles.iconSVG}/>
-                </span>
-                <span className={styles.icon}>
-                    <Image src="/profile.svg" alt="nmessageIcon" width={50} height={50} className={styles.iconSVG}/>
                 </span>
             </div>
             <div className={styles.menu}>
