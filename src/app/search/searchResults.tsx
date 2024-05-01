@@ -6,7 +6,7 @@ import SearchFilter from '../_components/search_bar/searchFilter';
 import styles from "./search.module.css";
 import { useEffect, useState } from 'react';
 
-export default function searchResults (){
+export default function SearchResults (){
     const searchParams = useSearchParams();         
     const searchValue = searchParams.get('search') ?? ''; 
     const [shouldShowFilter, setShouldShowFilter] = useState(false);
