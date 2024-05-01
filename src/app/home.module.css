@@ -146,3 +146,55 @@
     max-width: 80%;
     max-height: 80%;
 }
+
+@media (max-width: 768px) {
+    .frame1 {
+        height: 40vh;
+        background-position: center;
+    }
+
+    .frame1 .container1 {
+        width: 60%; 
+    }
+
+    .frame1 .logo {
+        font-size: 15vw;
+    }
+
+    .hero_bestsellers .header2,
+    .hero_bestsellers .showMore {
+        font-size: 4vw; 
+    }
+
+    .frame2 {
+        height: fit-content; 
+        grid-template-columns: 1fr;
+        row-gap: 12vw;
+    }
+
+    .feature {
+        width: 80%; 
+        height: 100%;
+        padding: 5% 5%; 
+        text-align: center;
+    }
+
+    .feature .icon {
+        width: 15vw; 
+        height: 15vw; 
+        padding: 5vw;
+    }
+
+    .feature .title {
+        font-size: 5vw; 
+    }
+
+    .feature .text {
+        font-size: 3vw; 
+    }
+
+    .feature .centeredImage img {
+        max-width: 100%; 
+        max-height: 100%; 
+    }
+}

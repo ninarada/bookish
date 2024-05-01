@@ -48,3 +48,23 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+    .workCard {
+        width: 70%;
+    }
+    
+    .workCard .imgContainer .image {
+        border-radius: 2px;
+    }
+
+    .workCard .textContainer{
+        text-align: center;
+    }
+
+    .workCard .textContainer .title {
+        white-space: wrap;
+        overflow: visible;
+    }
+    
+}

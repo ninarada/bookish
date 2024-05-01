@@ -19,10 +19,18 @@ interface NavbarProps {
 
 export default function NavBar ({pages}: NavbarProps) {
     const [scrolled, setScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathName = usePathname();
 
+    const handleMenuClick = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+      
+      const handleLinkClick = () => {
+        setIsMobileMenuOpen(false); 
+    };
+
     useEffect(() => {
-        
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setScrolled(true);
@@ -64,6 +72,27 @@ export default function NavBar ({pages}: NavbarProps) {
                 <span className={styles.icon}>
                     <Image src="/profile.svg" alt="nmessageIcon" width={50} height={50} className={styles.iconSVG}/>
                 </span>
+            </div>
+            <div className={styles.menu}>
+                <ul>
+                    <li className="text-[#065E35] font-semibold">
+                    <Link href="#" className={styles.tabs} onClick={handleMenuClick}>
+                        <span className={styles.menuIcon}>
+                            <Image src="/burgermenu.svg" alt="menu" width={30} height={30} className={styles.menuIconSVG}/>
+                        </span>
+                    </Link>
+                    <ul className={`${styles.dropdown} ${isMobileMenuOpen ? styles.showMobileMenu : ''}`}>
+                        {Object.entries(pages).map(([name, path]) => (
+                            <li key={name} onClick={handleLinkClick}>
+                                <Link href={path} key={name} className={`${styles.dropdownTab} ${path ===pathName ? styles.activeDropdownTab : ''}`}>
+                                    {name}
+                                </Link>
+                            </li>
+                            
+                        ))}
+                    </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
         </>

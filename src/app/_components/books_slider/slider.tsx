@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./slider.module.css";
 import { TypeWork } from "@/app/types/TypeWork";
 import WorkTemplate from "../work/WorkTemplate";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TypeAuthor } from "@/app/types/TypeAuthor";
 
 interface BookSliderProps {
@@ -13,10 +13,22 @@ interface BookSliderProps {
 
 export default function BookSlider ({subject}: BookSliderProps){
     const [currentBooks, setCurrentBooks] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const subjectLenght = subject.length;
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        handleResize(); 
+        window.addEventListener("resize", handleResize); 
+
+        return () => window.removeEventListener("resize", handleResize); 
+    }, []);
+
     const nextBook = () => {
-        if (currentBooks < subjectLenght-5) {
+        if (currentBooks < subjectLenght - (isMobile ? 0 : 5)) {
             setCurrentBooks(currentBooks+1);
         }
     }
@@ -41,7 +53,7 @@ export default function BookSlider ({subject}: BookSliderProps){
                 size="30px"
             />
             <div className={styles.books_container}>
-                {subject.slice(currentBooks, currentBooks+5).map((pair) => {
+                {subject.slice(currentBooks, currentBooks + (isMobile ? 1 : 5)).map((pair) => {
                     return <WorkTemplate work={pair.keyWork} authors={pair.keyAuthor} key={pair.keyWork.key}/>
                 })}
             </div>
@@ -50,8 +62,8 @@ export default function BookSlider ({subject}: BookSliderProps){
                     position: 'absolute', 
                     top: '40%', 
                     right: '5%', 
-                    cursor: currentBooks===subjectLenght-5 ? 'default' : 'pointer', 
-                    color: currentBooks===subjectLenght-5 ? '#8f8f8f' : '#6f6f6f'
+                    cursor: currentBooks===subjectLenght - (isMobile ? 1 : 5) ? 'default' : 'pointer', 
+                    color: currentBooks===subjectLenght - (isMobile ? 1 : 5) ? '#8f8f8f' : '#6f6f6f'
                 }} 
                 size="30px"
             />
