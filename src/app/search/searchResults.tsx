@@ -1,4 +1,5 @@
 "use client"
+
 import { useSearchParams } from 'next/navigation';
 import SearchResultsB from '../_components/search_bar/searchResultB';
 import SearchFilter from '../_components/search_bar/searchFilter';
@@ -6,8 +7,8 @@ import styles from "./search.module.css";
 import { useEffect, useState } from 'react';
 
 export default function searchResults (){
-    const searchParams = useSearchParams();         //search=aa
-    const searchValue = searchParams.get('search') ?? ''; //aa
+    const searchParams = useSearchParams();         
+    const searchValue = searchParams.get('search') ?? ''; 
     const [shouldShowFilter, setShouldShowFilter] = useState(false);
 
     useEffect(() => {

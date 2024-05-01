@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
-import { usePathname, useSearchParams } from "next/navigation";
 import getWorkByTitle from "@/app/api/items/getWorkByTitle";
 import styles from "./results.module.css";
 import Link from "next/link";
@@ -25,7 +24,6 @@ interface SearchResultsProps {
 const SearchResultsB: React.FC<SearchResultsProps> = ({ searchInput }) =>{
     const [resultByTitle, setResultByTitle] = useState<SearchResult[]>([]);
     const router = useRouter();
-    const searchParams = useSearchParams().get('search');
 
     useEffect(() => {
         const fetchData = async () => {
