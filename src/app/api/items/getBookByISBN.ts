@@ -8,12 +8,13 @@ export default async function getBookByISBN(inputISBN: string) {
     const fetchedBook: TypeBook = {
         title: data.title,
         number_of_pages: data.number_of_pages,
-        publishers: data.publishers, 
-        covers: data.covers, 
-        authors: data.authors, 
-        isbn_13: data.isbn_13, 
-        isbn_10: data.isbn_10, 
-        publish_date: data.publish_date,   
+        publishers: data.publishers,
+        covers: data.covers,
+        authors: data.authors,
+        isbn_13: data.isbn_13,
+        isbn_10: data.isbn_10,
+        publish_date: data.publish_date,
+        key: data.key
     };
     
     return fetchedBook;

@@ -17,13 +17,15 @@ export default async function getSubject (subjectName:string, limit:string) {
           await Promise.all( fictionWorks.flatMap(async (work) => {
             const authorKeys = work.authors.map(i => extractKeyFromArray(i.author.key));
   
-            const authors: TypeAuthor[] = await Promise.all(authorKeys.map(async (authorKey) => {
+            const authors = await Promise.all(authorKeys.map(async (authorKey) => {
               return await getAuthor(authorKey);
             })) 
+          
+            const filteredAuthors: TypeAuthor[] = authors.filter((author) => author !== null) as TypeAuthor[];
   
             const newEntry: { keyWork: TypeWork; keyAuthor: TypeAuthor[]} = {
               keyWork: work,
-              keyAuthor: authors,
+              keyAuthor: filteredAuthors,
             }
             fiction.push(newEntry);
           }));

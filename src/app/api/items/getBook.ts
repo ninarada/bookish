@@ -10,6 +10,7 @@ export default async function getBook(OLID: string) {
         title: data.title,
         authors: data.authors,
         covers: data.covers,
+        key: data.key,
     };
     
     return fetchedBook;
