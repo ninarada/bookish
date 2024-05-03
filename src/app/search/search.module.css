@@ -68,3 +68,14 @@
 .alertBox a:hover {
     color: var(--chinese-violet-lighter);
 }
+
+@media (max-width: 768px) {
+    .main {
+        width: 100vw;
+    }
+
+    .alertBox {
+        margin: 40px 10px;
+        width: 80%;
+    }
+}
