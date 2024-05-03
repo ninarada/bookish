@@ -57,7 +57,9 @@ export default function NavBar ({pages}: NavbarProps) {
                 ))}
             </div>
             <div className={styles.logo}>
+                <Link href={'/'}>
                     bookish
+                </Link>
             </div>
             <div className={styles.rightTabs}>
                 <span className={styles.icon}>

@@ -5,7 +5,7 @@ export default async function getWork(OLID: string, optional?: number){
     let baseURL;
 
     if(optional!=undefined) {
-        baseURL = `https://openlibrary.org/books/${OLID}.json`;
+        baseURL = `https://cors-anywhere.herokuapp.com/https://openlibrary.org/books/${OLID}.json`;
     }
     else {
         baseURL = `https://openlibrary.org/books/${OLID}.json`;
